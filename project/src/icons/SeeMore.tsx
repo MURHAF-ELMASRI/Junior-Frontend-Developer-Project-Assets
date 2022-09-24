@@ -7,7 +7,7 @@ interface Props {
 }
 
 function SeeMore(props: Props) {
-  const color = props.color || "none";
+  const color = props.color;
 
   return (
     <svg
@@ -18,10 +18,10 @@ function SeeMore(props: Props) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M8.18423 14.2497H7.04961V8.06236H0.808395V6.93732H7.04961V0.74976H8.18423V6.93732H14.4254V8.06236H8.18423V14.2497Z"
-        fill="#1D1D1D"
+        fill={color ?? "#1D1D1D"}
       />
     </svg>
   );
