@@ -7,6 +7,7 @@ const Text = styled.p`
   font-weight: 400;
   font-family: "Raleway", sans-serif;
   user-select: none;
+  line-break: anyWhere;
 `;
 
 export default memo(SideBarItem);

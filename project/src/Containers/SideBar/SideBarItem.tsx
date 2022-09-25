@@ -1,5 +1,6 @@
 import { memo, useCallback, useLayoutEffect, useState } from "react";
 import styled from "styled-components";
+import FlexComponent from "../../Components/FlexComponent";
 import Typography from "../../Components/Typography";
 import usePage from "../../hooks/usePage";
 import SeeLess from "../../icons/SeeLess";
@@ -78,18 +79,31 @@ function SideBarItem({ links, title, Icon }: Props) {
   return (
     <Container onClick={handleClick}>
       <Section open={open}>
-        <Icon color={open ? "white" : undefined} />
-        <Typography
-          style={{
-            textTransform: "uppercase",
-            fontWeight: 500,
-            marginRight: "auto",
-          }}
+        <FlexComponent
+          gap={10}
+          style={{ marginRight: "auto", alignItems: "center" }}
         >
-          {title}
-        </Typography>
-
-        {open ? <SeeLess /> : <SeeMore />}
+          <div>
+            <Icon color={open ? "white" : undefined} />
+          </div>
+          <Typography
+            style={{
+              textTransform: "uppercase",
+              fontWeight: open ? 700 : 500,
+            }}
+          >
+            {title}
+          </Typography>
+        </FlexComponent>
+        {open ? (
+          <div>
+            <SeeLess />
+          </div>
+        ) : (
+          <div>
+            <SeeMore />
+          </div>
+        )}
       </Section>
       <List open={open} height={ITEM_HEIGHT * links.length}>
         {links.map((link, idx) => (

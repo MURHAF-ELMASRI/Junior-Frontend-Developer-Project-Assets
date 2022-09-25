@@ -13,7 +13,7 @@ import Wave from "../../icons/Wave";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 208px;
+  width: 252px;
   background-color: #393d42;
   height: 100%;
 `;
